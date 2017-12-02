@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'MeteoconsRegular';
+    src: url('../fonts/meteocons-webfont.eot');
+    src: url('../fonts/meteocons-webfont.eot?#iefix') format('../fonts/embedded-opentype'), url('../fonts/meteocons-webfont.woff') format('woff'), url('../fonts/meteocons-webfont.ttf') format('truetype'), url('../fonts/meteocons-webfont.svg#MeteoconsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ==========================================================================
+   HTML elements
+   ========================================================================== */
+#moj1{
+    margin: auto;
+}
+
+div,
+label {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4d4d4d;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Comfortaa", sans-serif;
+}
+
+footer{
+    margin-top: 10%;
+    text-align: center;
+}
+
+/* ==========================================================================
+Common classes
+============================================================================= */
+
+.btn-black {
+    background-color: black;
+    border: 2px solid white;
+}
+
+.btn-black:hover {
+    background-color: #4d4d4d;
+    color: white;
+}
+
+/*#settings {
+    align-items: flex-end;
+    display: flex;
+    margin-bottom: 30px;
+}*/
+
+
+/* ==========================================================================
+   Switch
+   ========================================================================== */
+
+#cf-switch-wrapper {
+    display: flex;
+    flex-flow: row-reverse;
+    min-height: 100%;
+}
+
+.switch {
+    position: absolute;
+    /*margin-left: -9999px;*/
+    visibility: hidden;
+}
+
+.switch+ label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    margin: 0 5px;
+}
+
+.switch-round+ label {
+    width: 40px;
+    height: 20px;
+    background-color: black;
+    border: solid 2px white;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.switch-round+ label:before,
+.switch-round+ label:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 1px;
+    content: "";
+}
+
+.switch-round+ label:before {
+    right: 1px;
+    border-radius: 10px;
+    transition: background 0.4s;
+}
+
+.switch-round+label:after {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background-color: white;
+}
+
+.switch-round:checked+ label:after {
+    margin-left: 20px;
+}
+
+
+/* ==========================================================================
+Weather data
+============================================================================= */
+
+.weather-box {
+    min-height: 60vh;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.weather-box .info-text {
+    font-size: 2em;
+}
+
+#location {
+    font-size: 1.6em;
+   
+    margin: auto;
+}
+
+
+/* ==========================================================================
+Temperature box
+============================================================================= */
+
+
+
+#weather-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 24vh;
+    font-size: 24vh;
+}
+
+#temperature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 36vh;
+    font-size: 20vh;
+}
+
+[data-icon]:before {
+    font-family: 'MeteoconsRegular';
+    content: attr(data-icon);
+}
+
+
+/* ==========================================================================
+    Media queries
+============================================================================= */
+
+@media only screen and (max-width: 991px) {
+    #weather-data {
+        align-items: center;
+    }
+    .city-name {
+        font-size: 0.8em;
+    }
+    .weather-box .info-text {
+        font-size: 1.7em;
+    }
+}
